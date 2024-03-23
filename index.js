@@ -43,3 +43,11 @@ const swiper = new Swiper(".mySwiper", {
     },
   }
 });
+
+
+const swiper2 = new Swiper(".mySwiper2", {
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  }
+});
