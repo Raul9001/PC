@@ -49,5 +49,28 @@ const swiper2 = new Swiper(".mySwiper2", {
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 1,
+      spaceBetween: 40,
+    },
+    1024: {
+      slidesPerView: 1,
+      spaceBetween: 50,
+    }
   }
+});
+
+
+var swiper3 = new Swiper(".mySwiper3", {
+  
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
 });

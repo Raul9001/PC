@@ -111,6 +111,64 @@ transition: width .5s ease-in-out;
     margin-bottom: 60px;
         }
 
+    .Projects .into-right a{
+
+
+      width: 201px;
+      height: 58px;
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+      align-items: center;
+      justify-content: center;
+      display: inline-flex;
+      margin-top: 50px;
+    }
+
+    .Projects .into-left h5{
+      color: #B16CEA;
+      
+    }
+
+    .Projects .into-left h1{
+      font-size: 54px;
+    }
+
+    .Services-cards .card ul{
+      list-style-type: square;
+       list-style-position: inside; 
+      padding-left: 0;
+  
+    }
+
+  .services h6{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 22px;
+    color: #FF5E69;
+    letter-spacing: 2px;
+   padding-top: 80px;
+    
+}
+.services h1{
+    text-align: center;
+}
+
+
+.Services-cards .card img{
+  height: 50px;
+  
+}
+
+.card{
+  margin-top: 100px;
+}
+
+.Services-cards  p{
+  color:  #666666;
+  ;
+}
+
 
 
         @media(max-width:575px) {
