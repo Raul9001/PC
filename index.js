@@ -1,11 +1,12 @@
 const overlayMenu=document.querySelector(".overlay-menu")
 const navbarButton=document.querySelector(".navbar-toggler-icon")
 const closemenu=document.querySelector(".fa-x")
+const next=document.querySelector(".button-next")
+const prev=document.querySelector(".button-prev")
 
 
 navbarButton.addEventListener("click",openthemenu)
 closemenu.addEventListener("click", closethemenu)  
-
 
 
 
@@ -45,6 +46,7 @@ const swiper = new Swiper(".mySwiper", {
 });
 
 
+
 const swiper2 = new Swiper(".mySwiper2", {
   autoplay: {
     delay: 2500,
@@ -62,15 +64,59 @@ const swiper2 = new Swiper(".mySwiper2", {
     1024: {
       slidesPerView: 1,
       spaceBetween: 50,
-    }
+    },
   }
 });
 
 
-var swiper3 = new Swiper(".mySwiper3", {
-  
+
+
+
+
+const swiper3 = new Swiper(".mySwiper3", {
+
+
+  slidesPerView: 3,
+  spaceBetween: 30,
+
+
+
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
 });
+
+{/* <div class=" blog ">
+<span id="metadata">April 16, 2021 .6 mins</span>
+<h3>Design tips for designers, that cover <br>everything you need</h3>
+<a href="" class="text-white">Read the article</a>
+ </div> */}
+
+
+
+
+
+//  function fetch() {
+// return new Promise(resolve,reject)
+//  }
+
+
+function fetchBlogs(){
+  return new Promise((resolve,reject)=>{
+  fetch("blogs.json")
+  .then(answer => {
+if(!answer.ok){
+  throw new Error("Проблема в прочтении файла")
+}
+return answer.json()
+
+
+  })
+then(bloqlar =>{
+  localStorage.setItem("bloqlar",bloqlar)
+  resolve()
+} )
+  
+  })
+}
