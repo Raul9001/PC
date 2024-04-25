@@ -176,6 +176,8 @@ transition: width .5s ease-in-out;
 
 .blogs .blog-left-side h6{
   color: #FFA84B;
+  font-size: 22px;
+  letter-spacing: 4px;
 }
 
 .blog {
@@ -195,32 +197,83 @@ padding: 30px 0;
 
 }
 
-.button-prev{
-  width: 54px;
-  height: 54px;
-  background-color: rgb(255, 255, 255);
-  align-items: center;
-  justify-content: center;
-  display: inline-flex;
+.button-prev button{
+    /* width: 54px;
+  height: 54px; 
+   background-color: rgb(255, 255, 255);  */
+   /* align-items: center;
+  justify-content: center; 
+  display: inline-flex;  */
+  padding: 12px;
+  padding-left: 30px;
  
  
 }
 
-.button-next{
-  width: 54px;
+.button-next button {
+   /* width: 54px;
   height: 54px;
-  background-color: rgb(255, 255, 255);
-  align-items: center;
+  background-color: rgb(255, 255, 255);  */
+  /* align-items: center;
   justify-content: center;
-  display: inline-flex;
- 
- 
+  display: inline-flex; */
+  
+ padding: 12px;
+ padding-left: 30px;
 }
 
 .carusel{
-  margin-bottom: -140px;
+  margin-bottom: -210px;
+}
+.carusel .swiper-slide .card .card-img-top{
+  width: 100%;
+    object-fit: cover;  
+  height: 100%;
 }
 
+.carusel .swiper-slide .card .card-title{
+  color:  #3C46FF;
+  font-size: 14px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  
+}
+
+.carusel .swiper-slide .card .card-text {
+  font-size: 24px;
+}
+
+
+.carusel .swiper-slide .card a{
+
+text-decoration: none;
+color: #000;
+font-size: 18px;
+
+}
+
+
+.blog-right-side{
+
+margin-top: 200px;
+
+}
+
+.blog-left-side{
+
+margin-top: 200px;
+
+}
+
+.carusel .swiper-slide .card{
+  border-radius: 0%;
+}
+.button-next button img{
+  margin-right: 15px;
+}
+.button-prev button img{
+  margin-right: 15px;
+}
 
         @media(max-width:575px) {
           .parentdiv{

@@ -20,6 +20,15 @@ function closethemenu(){
 
 }
 
+prev.addEventListener('click', function () {
+  swiper3.slidePrev();
+});
+
+next.addEventListener('click', function () {
+  swiper3.slideNext();
+});
+
+
 
 // swiper js code
 const swiper = new Swiper(".mySwiper", {
@@ -81,10 +90,7 @@ const swiper3 = new Swiper(".mySwiper3", {
 
 
 
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+
 });
 
 {/* <div class=" blog ">
