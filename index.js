@@ -3,6 +3,7 @@ const navbarButton=document.querySelector(".navbar-toggler-icon")
 const closemenu=document.querySelector(".fa-x")
 const next=document.querySelector(".button-next")
 const prev=document.querySelector(".button-prev")
+ 
 
 
 navbarButton.addEventListener("click",openthemenu)
@@ -120,9 +121,65 @@ return answer.json()
 
   })
 then(bloqlar =>{
-  localStorage.setItem("bloqlar",bloqlar)
-  resolve()
-} )
+  localStorage.setItem("bloqlarDepo",JSON.stringify(bloqlar))
+  resolve(bloqlar)
+})
+.catch(xeta => reject(xeta))
   
   })
+}
+
+
+
+
+
+
+
+function getDataFromLocalStorage(){
+  const blogs = localStorage.getItem("bloglarDepo")
+  return blogs ? JSON.parse(blogs) : null
+}
+
+
+function displayBlog(blogsParametr){
+const blogPlaceDiv = document.querySelector(".blog-right-side") 
+
+
+blogPlaceDiv.innerHTML = ` `
+
+
+blogsParametr.forEach(birBlog => {
+
+
+  const divElement= document.createElement("div")
+divElement.classList.add("blog")
+divElement.innerHTML = `
+<span id="metadata">${birBlog.tarix}</span>
+<h3>${birBlog.title}</h3>
+<a href="" class="text-white">Read the article</a>`
+
+
+
+blogPlaceDiv.appendChild(divElement)
+
+
+})
+}
+
+document.addEventListener("DOMContentLoaded",loadData)
+
+
+function loadData () {
+  const blogs = getDataFromLocalStorage()
+
+  if(blogs){
+    console.log("Blog is loading...")
+    displayBlog(blogs)
+  }
+  else{
+    console.log("Blog is do not loading...")
+    fetchBlogs()
+          .then(lastStageBlogs => displayBlog(lastStageBlogs))
+          .catch(err => console.log(`there is an unexpected problem in the server ${err.message}`))
+    }
 }
