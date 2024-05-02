@@ -109,77 +109,56 @@ const swiper3 = new Swiper(".mySwiper3", {
 //  }
 
 
-function fetchBlogs(){
-  return new Promise((resolve,reject)=>{
-  fetch("blogs.json")
-  .then(answer => {
-if(!answer.ok){
-  throw new Error("Проблема в прочтении файла")
-}
-return answer.json()
-
-
-  })
-then(bloqlar =>{
-  localStorage.setItem("bloqlarDepo",JSON.stringify(bloqlar))
-  resolve(bloqlar)
-})
-.catch(xeta => reject(xeta))
-  
-  })
+function fetchBlogs() {
+  return new Promise((resolve, reject) => {
+    fetch("blogs.json")
+      .then(answer => {
+        if (!answer.ok) {
+          throw new Error("Проблема в прочтении файла");
+        }
+        return answer.json();
+      })
+      .then(blogs => {
+        localStorage.setItem("bloglarDepo", JSON.stringify(blogs)); // Corrected the localStorage key name
+        resolve(blogs);
+      })
+      .catch(error => reject(error));
+  });
 }
 
-
-
-
-
-
-
-function getDataFromLocalStorage(){
-  const blogs = localStorage.getItem("bloglarDepo")
-  return blogs ? JSON.parse(blogs) : null
+function getDataFromLocalStorage() {
+  const blogs = localStorage.getItem("bloglarDepo"); // Corrected the localStorage key name
+  return blogs ? JSON.parse(blogs) : null;
 }
 
+function displayBlog(blogsParametr) {
+  const blogPlaceDiv = document.querySelector(".blog-right-side");
+  blogPlaceDiv.innerHTML = "";
 
-function displayBlog(blogsParametr){
-const blogPlaceDiv = document.querySelector(".blog-right-side") 
+  blogsParametr.forEach(birBlog => {
+    const divElement = document.createElement("div");
+    divElement.classList.add("blog");
+    divElement.innerHTML = `
+      <span id="metadata">${birBlog.tarix}</span>
+      <h3>${birBlog.title}</h3>
+      <a href="url_here" class="text-white">Read the article</a>`; // Provide a valid URL for href attribute
 
-
-blogPlaceDiv.innerHTML = ` `
-
-
-blogsParametr.forEach(birBlog => {
-
-
-  const divElement= document.createElement("div")
-divElement.classList.add("blog")
-divElement.innerHTML = `
-<span id="metadata">${birBlog.tarix}</span>
-<h3>${birBlog.title}</h3>
-<a href="" class="text-white">Read the article</a>`
-
-
-
-blogPlaceDiv.appendChild(divElement)
-
-
-})
+    blogPlaceDiv.appendChild(divElement);
+  });
 }
 
-document.addEventListener("DOMContentLoaded",loadData)
+document.addEventListener("DOMContentLoaded", loadData);
 
+function loadData() {
+  const blogs = getDataFromLocalStorage();
 
-function loadData () {
-  const blogs = getDataFromLocalStorage()
-
-  if(blogs){
-    console.log("Blog is loading...")
-    displayBlog(blogs)
-  }
-  else{
-    console.log("Blog is do not loading...")
+  if (blogs) {
+    console.log("Blog is loading...");
+    displayBlog(blogs);
+  } else {
+    console.log("Blog is not loading..."); // Corrected the console log message
     fetchBlogs()
-          .then(lastStageBlogs => displayBlog(lastStageBlogs))
-          .catch(err => console.log(`there is an unexpected problem in the server ${err.message}`))
-    }
+      .then(lastStageBlogs => displayBlog(lastStageBlogs))
+      .catch(err => console.log(`There is an unexpected problem in the server: ${err.message}`)); // Corrected the console log message
+  }
 }
