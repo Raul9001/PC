@@ -356,10 +356,21 @@ margin-top: 200px;
 
 
 
+.Word-on-the-street h1{
+  font-size: 54px;
+  letter-spacing: 1px;
+}
+.Word-on-the-street h4{
+  font-size: 22px;
+  letter-spacing: 4px;
+  color: #3C46FF;
+  margin-bottom: 23px;
+}
 
 
-
-
+.Word-on-the-street {
+  margin-top: 170px;
+}
 
 
 
