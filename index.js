@@ -1,8 +1,8 @@
 const overlayMenu=document.querySelector(".overlay-menu")
 const navbarButton=document.querySelector(".navbar-toggler-icon")
 const closemenu=document.querySelector(".fa-x")
-const next=document.querySelector(".button-next")
-const prev=document.querySelector(".button-prev")
+// const next=document.querySelector(".button-next")
+// const prev=document.querySelector(".button-prev")
  
 
 
@@ -21,13 +21,13 @@ function closethemenu(){
 
 }
 
-prev.addEventListener('click', function () {
-  swiper3.slidePrev();
-});
+// prev.addEventListener('click', function () {
+//   swiper3.slidePrev();
+// });
 
-next.addEventListener('click', function () {
-  swiper3.slideNext();
-});
+// next.addEventListener('click', function () {
+//   swiper3.slideNext();
+// });
 
 
 
@@ -89,7 +89,10 @@ const swiper3 = new Swiper(".mySwiper3", {
   slidesPerView: 3,
   spaceBetween: 30,
 
-
+  navigation: {
+    nextEl: ".button-next",
+    prevEl: ".button-prev",
+  },
 
 
 });
@@ -119,7 +122,7 @@ function fetchBlogs() {
         return answer.json();
       })
       .then(blogs => {
-        localStorage.setItem("bloglarDepo", JSON.stringify(blogs)); // Corrected the localStorage key name
+        localStorage.setItem("bloglarDepo", JSON.stringify(blogs)); // Сохраняем блоги в localStorage
         resolve(blogs);
       })
       .catch(error => reject(error));
@@ -127,21 +130,26 @@ function fetchBlogs() {
 }
 
 function getDataFromLocalStorage() {
-  const blogs = localStorage.getItem("bloglarDepo"); // Corrected the localStorage key name
-  return blogs ? JSON.parse(blogs) : null;
+  localStorage.removeItem("bloglarDepo"); // Удаляем данные из localStorage при загрузке страницы
+  return null;
 }
 
 function displayBlog(blogsParametr) {
   const blogPlaceDiv = document.querySelector(".blog-right-side");
   blogPlaceDiv.innerHTML = "";
 
+  if (!Array.isArray(blogsParametr)) {
+    console.error("Неверный формат данных для блогов");
+    return;
+  }
+
   blogsParametr.forEach(birBlog => {
     const divElement = document.createElement("div");
     divElement.classList.add("blog");
     divElement.innerHTML = `
       <span id="metadata">${birBlog.tarix}</span>
-      <h3>${birBlog.title}</h3>
-      <a href="url_here" class="text-white">Read the article</a>`; // Provide a valid URL for href attribute
+      <h3 class="py-3">${birBlog.title}</h3>
+      <a href="${birBlog.url}" class="text-white">Read the article <img src="./images/white-arrow.svg" class="ms-2" alt=""></a>`; // Убедитесь, что здесь указан корректный URL
 
     blogPlaceDiv.appendChild(divElement);
   });
@@ -156,9 +164,9 @@ function loadData() {
     console.log("Blog is loading...");
     displayBlog(blogs);
   } else {
-    console.log("Blog is not loading..."); // Corrected the console log message
+    console.log("Blog is not loading..."); 
     fetchBlogs()
       .then(lastStageBlogs => displayBlog(lastStageBlogs))
-      .catch(err => console.log(`There is an unexpected problem in the server: ${err.message}`)); // Corrected the console log message
+      .catch(err => console.log(`There is an unexpected problem in the server: ${err.message}`)); 
   }
 }

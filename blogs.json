@@ -1,19 +1,30 @@
 [
     {
-        "title":"blog1",
-        "tarix": "23 april 2024, 6 mins"
-        
-        },
-        {
-            "title":"blog2",
-            "tarix": "23 april 2024, 6 mins"
-            
-            },
-            
-            {
-                "title":"blog3",
-                "tarix": "23 april 2024, 6 mins"
-                
-                }
-        
+       "title":"Design tips for designers, that cover everything you need",
+       "tarix": "April 16, 2021 ,6 mins"
+       
+       },
+       {
+          "title":"How to build rapport with your web design clients",
+            "tarix": "23 april 2024, ,5 mins"
+           
+           },
+           
+           {
+               "title":"Top 6 free website mockup tools 2021",
+               "tarix": "23 april 2024, ,5 mins"
+               
+              },
+          {
+               "title":"Logo design trends to avoid in 2021",
+               "tarix": "23 april 2024, ,7 mins"
+               
+               },
+           {
+                "title":"22 best UI design tools",
+                "tarix": "23 april 2024, ,7 mins"
+               
+               }
+           
+       
 ]

@@ -102,7 +102,7 @@ transition: width .5s ease-in-out;
         
         font-size: 35px;
         display: inline-flex;
-        min-width: 150px;}
+        min-width: 170px;}
 
 
         .partners .Trusted-by h6{
@@ -278,6 +278,105 @@ margin-top: 200px;
 .blog-right-side .blog a{
   text-decoration: none;
 }
+
+
+
+.card-img-top-1{
+  height: 305px;
+  object-fit: cover;
+ 
+}
+
+.card-img-top-2{
+  height: 305px;
+  object-fit: cover;
+ 
+}
+
+.card-img-top-3{
+  height: 305px;
+  object-fit: cover;
+}
+
+.thats-me .thats-me-right p{
+  font-size: 22px;
+  color: #666666;
+}
+
+
+.thats-me .thats-me-left h4{
+  color: #FF5E69;
+  font-size: 22px;
+  letter-spacing: 4px;
+}
+
+
+
+.thats-me .thats-me-left h1{
+  font-size: 54px;
+}
+
+.thats-me{
+  margin-top: 150px;
+}
+
+
+
+
+
+.thats-me .pictures{
+  margin-top: 150px;
+}
+
+
+
+
+.partners .swiper-wrapper {
+  margin-left: 100px;
+}
+
+
+ /* .thats-me .pictures .pic-3 img{
+   height: 305px;
+ 
+}
+
+.thats-me .pictures .pic-2 img{
+  height: 626px;
+  
+}
+
+.thats-me .pictures .pic-1 img{
+  height: 626px;
+  
+  
+}
+  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         @media(max-width:575px) {
           .parentdiv{
