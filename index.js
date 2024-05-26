@@ -170,3 +170,27 @@ function loadData() {
       .catch(err => console.log(`There is an unexpected problem in the server: ${err.message}`)); 
   }
 }
+
+
+
+const swiper4 = new Swiper(".mySwiper4", {
+  slidesPerView: 1,
+  navigation: {
+    nextEl: ".button-next1",
+    prevEl: ".button-prev1",
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 1,
+      spaceBetween: 40,
+    },
+    1024: {
+      slidesPerView: 1,
+      spaceBetween: 50,
+    },
+  }
+});
