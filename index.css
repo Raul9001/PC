@@ -387,22 +387,94 @@ margin-top: 200px;
 }
 
 
-.Word-on-the-street .mySwiper4 .swiper-slide .pic2 
-{
- height: 450px;
- width: 485px;
+
+
+
+
+.Word-on-the-street .word-right .navigation{
+  display: flex;
+  justify-content: end;
+  
+ 
 }
 
 
 
+.Word-on-the-street .word-right .navigation .nav-btn{
+  background-color: #000;
+  color: white;
+  width: 54px;
+  height: 54px;
+}
+
+
+.Word-on-the-street .word-right #testimonial-quote {
+  font-size: 36px;
+ 
+
+}
+
+.Word-on-the-street .word-right #testimonial-author{
+  font-size: 20px;
+  margin-top: 50px;
+}
+
+.Word-on-the-street .word-right .author-title{
+  font-size: 18px;
+}
 
 
 
+.Word-on-the-street .word-left #testimonial-image{
+  width: 485px;
+  height: 450px;
+}
 
 
+footer {
+  background-color: #000;
+  margin-top: 2rem;
+  padding: 7rem 0 1.5rem 0;
+}
 
+footer h1 {
+  font-size: 50px;
+}
 
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
 
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contacts-2 {
+  justify-content: space-between;
+}
+
+.contacts-2 span {
+  color: #fff;
+}
+
+.footer-contacts span{
+ color: #5C5C5C;
+}
+
+.about-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.copyright {
+  color: #8A95AD;
+}
 
 
 

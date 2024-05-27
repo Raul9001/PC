@@ -197,3 +197,49 @@ const swiper4 = new Swiper(".mySwiper4", {
 
 
 
+const testimonials = [
+  {
+      image: 'cd540eb830f6b83165f86c3f8c592012 (1).jpg',
+      quote: 'Jade helped us build a software so intuitive that it didn\'t need a walkthrough. He solved complex problems with brilliant design.',
+      author: 'John Franklin',
+      title: 'Founder, Double Bunch'
+  },
+  {
+      image: 'cd540eb830f6b83165f86c3f8c592012 (1).jpg',
+      quote: 'Jade\'s design thinking transformed our project. His ability to understand user needs is exceptional.',
+      author: 'Sarah Williams',
+      title: 'CEO, Creative Solutions'
+  },
+  {
+      image: 'cd540eb830f6b83165f86c3f8c592012 (1).jpg',
+      quote: 'Thanks to Jade, our user engagement increased by 50%. His design skills are top-notch.',
+      author: 'Mike Johnson',
+      title: 'Product Manager, Tech Innovators'
+  }
+];
+
+let currentIndex = 0;
+
+const imageElement = document.getElementById('testimonial-image');
+const quoteElement = document.getElementById('testimonial-quote');
+const authorElement = document.getElementById('testimonial-author');
+
+document.getElementById('prev-btn').addEventListener('click', () => {
+  currentIndex = (currentIndex === 0) ? testimonials.length - 1 : currentIndex - 1;
+  updateTestimonial();
+});
+
+document.getElementById('next-btn').addEventListener('click', () => {
+  currentIndex = (currentIndex === testimonials.length - 1) ? 0 : currentIndex + 1;
+  updateTestimonial();
+});
+
+function updateTestimonial() {
+  const testimonial = testimonials[currentIndex];
+  imageElement.src = testimonial.image;
+  quoteElement.textContent = `"${testimonial.quote}"`;
+  authorElement.innerHTML = `${testimonial.author}<br><span class="author-title">${testimonial.title}</span>`;
+}
+
+// Initialize with the first testimonial
+updateTestimonial();
