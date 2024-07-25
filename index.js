@@ -212,7 +212,7 @@ const testimonials = [
   },
   {
       image: 'cd540eb830f6b83165f86c3f8c592012 (1).jpg',
-      quote: 'Thanks to Jade, our user engagement increased by 50%. His design skills are top-notch.',
+      quote: 'Thanks to Jade, our user engagement increased by 50%. His design  skills are top-notch.',
       author: 'Mike Johnson',
       title: 'Product Manager, Tech Innovators'
   }

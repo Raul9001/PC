@@ -373,30 +373,18 @@ margin-top: 200px;
 }
 
 
-.Word-on-the-street .anket .swiper-right p{
-  font-size: 36px;
-  color: #000;
-}
-
-
-.Word-on-the-street .anket .swiper-right  span {
-  font-size: 20px;
-  flex-direction: column;
-  display: flex;
-  
-}
 
 
 
 
 
 
-.Word-on-the-street .word-right .navigation{
+ .Word-on-the-street .word-right .navigation{
   display: flex;
   justify-content: end;
   
  
-}
+} 
 
 
 
@@ -416,7 +404,7 @@ margin-top: 200px;
 
 .Word-on-the-street .word-right #testimonial-author{
   font-size: 20px;
-  margin-top: 50px;
+   margin-top: 50px; 
 }
 
 .Word-on-the-street .word-right .author-title{
@@ -475,6 +463,61 @@ footer h1 {
 .copyright {
   color: #8A95AD;
 }
+
+
+
+
+blockquote{
+  margin-top: 70px;
+}
+
+.word-left{
+  margin-top: 100px;
+
+}
+
+.word-right{
+  margin-top: 100px;
+}
+
+.Word-on-the-street{
+  padding-bottom: 70px;
+}
+
+
+
+
+
+.word-right {
+  position: relative; /* Ensures that the navigation buttons are positioned relative to this container */
+  min-height: 400px;  /* Ensure there's enough space for content */
+}
+
+.navigation {
+  position: absolute;
+  bottom: 10px;  /* Adjust the position as needed */
+  left: 0;
+  right: 0;
+  text-align: center;  /* Center the buttons horizontally */
+}
+
+.nav-btn {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
